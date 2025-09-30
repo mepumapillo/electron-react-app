@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Voice Transcriber</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎤 Voice Transcriber</h1>
+        <p>Record audio and transcribe it to text using OpenAI Whisper</p>
+      </header>
+
+      <main>
+        <div class="api-key-section">
+          <label for="apiKey">OpenAI API Key:</label>
+          <input 
+            type="password" 
+            id="apiKey" 
+            placeholder="Enter your OpenAI API key..."
+            class="api-input"
+          />
+          <button id="saveApiKey" class="btn btn-secondary">Save Key</button>
+        </div>
+
+        <div class="recording-section">
+          <div class="recording-controls">
+            <button id="recordBtn" class="btn btn-primary" disabled>
+              <span class="record-icon">🎤</span>
+              <span class="record-text">Start Recording</span>
+            </button>
+            <button id="stopBtn" class="btn btn-danger" disabled>
+              <span class="stop-icon">⏹️</span>
+              Stop Recording
+            </button>
+          </div>
+          
+          <div class="status" id="status">
+            Enter your API key to start recording
+          </div>
+        </div>
+
+        <div class="transcription-section">
+          <label for="transcription">Transcribed Text:</label>
+          <textarea 
+            id="transcription" 
+            class="transcription-output" 
+            placeholder="Your transcribed text will appear here..."
+            readonly
+          ></textarea>
+          <button id="copyBtn" class="btn btn-secondary" disabled>
+            📋 Copy to Clipboard
+          </button>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/renderer.ts"></script>
+  </body>
+</html>

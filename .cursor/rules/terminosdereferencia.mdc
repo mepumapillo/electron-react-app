@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+The project is about a creata a desktop app. The app should be similar a superwisper https://superwhisper.com/ or wisprflow https://wisprflow.ai/. 
+
+These proyect is a MVP so is a beginner version. For these MVP there are the requerimentes:
+
+1. Basic UI
+2. Text field where the user put their openai apikey
+3. Connection to the microfone
+4. Transcripe audio to text 
+5. Put the text to portapales. 
+
+The base function to transcript audio to text is these. 
+
+async function speechToText() {
+  const transcription = await openai.audio.transcriptions.create({
+    file: fs.createReadStream(""),
+    //model: "gpt-4o-transcribe",
+    model: "whisper-1",
+  });
+   //console.log("====== TRANSCRIPTION ======")
+   //console.log({"data": transcription.text});
+   return {data: transcription.text};
+}
